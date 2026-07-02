@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizza Rock — Horná Seč | Pizzeria s donáškou</title>
+<meta name="description" content="Pizza Rock Horná Seč — poctivá pizza vo veľkej gramáži. Donáška domov zdarma. Objednávky na 0944 748 111.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background: #fafafa;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* HEADER */
+header {
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #333;
+}
+.logo strong { color: #ff6b00; }
+nav a {
+  margin: 0 18px;
+  font-size: 14px;
+  color: #666;
+  transition: color 0.2s;
+}
+nav a:hover { color: #ff6b00; }
+.cta-btn {
+  background: #ff6b00;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.cta-btn:hover { background: #e55a00; }
+.menu-toggle { display: none; background: none; border: none; font-size: 26px; cursor: pointer; color: #333; }
+
+/* HERO */
+.hero {
+  background: #fff;
+  padding: 60px 0 0;
+  text-align: center;
+}
+.hero-label {
+  color: #ff6b00;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(30px, 6vw, 52px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+  line-height: 1.15;
+}
+.hero > .wrap > p {
+  max-width: 500px;
+  margin: 0 auto 32px;
+  color: #666;
+  font-size: 16px;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: 13px 30px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-primary {
+  background: #ff6b00;
+  color: #fff;
+  border-color: #ff6b00;
+}
+.btn-primary:hover { background: #e55a00; border-color: #e55a00; }
+.btn-secondary {
+  background: transparent;
+  color: #333;
+  border-color: #ddd;
+}
+.btn-secondary:hover { border-color: #ff6b00; color: #ff6b00; }
+
+.pizza-bg {
+  background: linear-gradient(135deg, #ffc700 0%, #ffb500 100%);
+  padding: 36px 0;
+}
+.hero-image {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.hero-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+}
+
+/* ABOUT */
+.about {
+  padding: 80px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.about h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.about p {
+  color: #666;
+  margin-bottom: 14px;
+}
+.about-img img {
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+}
+
+/* MENU */
+.menu-section {
+  padding: 70px 0;
+  background: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.menu-head { text-align: center; margin-bottom: 12px; }
+.menu-head h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+}
+.menu-sub {
+  text-align: center;
+  color: #888;
+  font-size: 15px;
+  margin-bottom: 36px;
+}
+
+.menu-cat {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 44px 0 18px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ff6b00;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.menu-cat:first-of-type { margin-top: 0; }
+.menu-cat small {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #999;
+}
+
+#menu-grid, .drinks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 16px;
+}
+.menu-item {
+  background: #fafafa;
+  padding: 18px 20px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.menu-item:hover {
+  border-color: #ff6b00;
+  box-shadow: 0 6px 18px rgba(255,107,0,0.12);
+  transform: translateY(-2px);
+}
+.menu-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.menu-item h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #1a1a1a;
+}
+.menu-item .price {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ff6b00;
+  white-space: nowrap;
+}
+.menu-item .gram {
+  color: #aaa;
+  font-size: 12.5px;
+  display: block;
+  margin: 2px 0 6px;
+}
+.menu-item .ing {
+  color: #777;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+/* promo banners */
+.promo-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 44px;
+}
+.promo {
+  border-radius: 10px;
+  padding: 24px 26px;
+  border: 1px solid;
+}
+.promo-orange {
+  background: #fff7f0;
+  border-color: #ffd6b3;
+}
+.promo-yellow {
+  background: #fffbe8;
+  border-color: #f5e6a3;
+}
+.promo p:first-child {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ff6b00;
+  margin-bottom: 6px;
+}
+.promo-yellow p:first-child { color: #b8960c; }
+.promo strong {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: #1a1a1a;
+  display: block;
+}
+.promo .promo-price {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ff6b00;
+  margin-top: 6px;
+}
+.promo em { font-style: normal; color: #888; font-size: 13.5px; }
+
+.toppings {
+  margin-top: 20px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 18px 22px;
+  font-size: 13.5px;
+  color: #777;
+  line-height: 1.7;
+}
+.toppings strong { color: #333; }
+
+.menu-footnote {
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  margin-top: 28px;
+}
+
+/* CONTACT */
+.contact {
+  padding: 60px 40px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  margin: 80px auto;
+  max-width: 1100px;
+}
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.contact h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+.contact-phone {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ff6b00;
+  display: block;
+  margin-bottom: 6px;
+}
+.contact-phone:hover { color: #e55a00; }
+.hours { margin-top: 22px; max-width: 320px; }
+.hours p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.fb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  background: #1877f2;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.fb-btn:hover { background: #145fc4; }
+
+/* FOOTER */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 36px 0;
+  text-align: center;
+}
+footer p { font-size: 14px; margin-bottom: 4px; }
+footer a { color: #ff9b4d; font-weight: 600; }
+
+/* floating call button on mobile */
+.call-fab {
+  display: none;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 200;
+  background: #ff6b00;
+  color: #fff;
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 8px 24px rgba(255,107,0,0.4);
+}
+
+/* MOBILE */
+@media (max-width: 860px) {
+  .menu-toggle { display: block; }
+  nav { display: none; }
+  nav.is-open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 1px solid #e0e0e0; padding: 8px 0; }
+  nav.is-open a { margin: 12px 24px; }
+  .header-cta { display: none; }
+  .about { grid-template-columns: 1fr; gap: 32px; padding: 56px 24px; }
+  .contact-wrap { grid-template-columns: 1fr; }
+  .contact { padding: 40px 24px; margin: 48px 16px; }
+  .promo-row { grid-template-columns: 1fr; }
+  .hero { padding: 40px 0 0; }
+  .call-fab { display: block; }
+  footer { padding-bottom: 90px; }
+}
+@media (max-width: 480px) {
+  #menu-grid, .drinks-grid { grid-template-columns: 1fr; }
+  .hero-actions .btn { width: 100%; max-width: 320px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-wrap">
+    <div class="logo">Pizza<strong>Rock</strong></div>
+    <nav id="nav">
+      <a href="#menu">Menu</a>
+      <a href="#o-nas">O nás</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a href="tel:+421944748111" class="cta-btn header-cta">📞 0944 748 111</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Otvoriť menu">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="hero-label">Pizzeria · Horná Seč</p>
+    <h1>Poctivá pizza vo veľkej gramáži</h1>
+    <p>Rovno z Hornej Seče. Bez kompromisov, s poriadnou porciou — a k objednávke palacinky zdarma.</p>
+    <div class="hero-actions">
+      <a href="tel:+421944748111" class="btn btn-primary">📞 0944 748 111</a>
+      <a href="#menu" class="btn btn-secondary">Pozrieť menu</a>
+    </div>
+  </div>
+
+  <div class="pizza-bg">
+    <div class="hero-image">
+      <img src="assets/venue-sign.jpg" alt="Pizza Rock Horná Seč — vchod do pizzerie">
+    </div>
+  </div>
+</section>
+
+<section class="about" id="o-nas">
+  <div>
+    <h2>Pizza s dušou rocku</h2>
+    <p>Pizza Rock nájdete na Družstevnej ulici v Hornej Seči — kamenná terasa, gitary na stene a poriadne veľké pizze.</p>
+    <p>Pečieme z kvalitných surovín, bez šetrenia na množstve. Na výber máte z troch pizzových základov: klasický, pikantný a smotanový.</p>
+    <p>Vydávame zo stravných lístkov. Donáška domov v okolí zdarma.</p>
+  </div>
+  <div class="about-img">
+    <img src="assets/venue-interior.jpg" alt="Interiér Pizza Rock — gitary na stene">
+  </div>
+</section>
+
+<section class="menu-section" id="menu">
+  <div class="wrap">
+    <div class="menu-head"><h2>Menu</h2></div>
+    <p class="menu-sub">Pizza s priemerom 32 cm · tri základy na výber: klasický, pikantný, smotanový</p>
+
+    <h3 class="menu-cat">🍕 Pizza <small>32 cm</small></h3>
+    <div id="menu-grid"></div>
+
+    <h3 class="menu-cat">🥤 Nápoje</h3>
+    <div class="drinks-grid" id="drinks-grid"></div>
+
+    <div class="promo-row">
+      <div class="promo promo-orange">
+        <p>Špeciálna rodinná ponuka</p>
+        <strong>4× pizza + 1× fľaša nealka + 1× pivo</strong>
+        <em>podľa vlastného výberu</em>
+        <div class="promo-price">32,90 €</div>
+      </div>
+      <div class="promo promo-yellow">
+        <p>Palacinky grátis 🥞</p>
+        <strong>Ku každej objednávke nad 12 € dostanete palacinky zdarma!</strong>
+      </div>
+    </div>
+
+    <div class="toppings">
+      <strong>Extra prílohy na pizzu</strong> (50 g / 0,90 €): šunka, slanina, klobása, saláma, kuracie mäso, tuniak, šampiňóny, feferóny, olivy, cibuľa, zelená paprika, paradajka, kukurica, ananás, eidam, údený syr, niva, cammembert, mozzarela, vajce, jalapeňo, fazuľa, sardinky, baraní roh, krabie tyčinky
+    </div>
+
+    <p class="menu-footnote">Vydávame zo stravných lístkov. Ceny sú informatívne — presné zloženie si dohodnete na telefóne.</p>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="contact-wrap" id="kontakt">
+    <div>
+      <h2>Objednávky</h2>
+      <a href="tel:+421944748111" class="contact-phone">📞 0944 748 111</a>
+      <p style="font-size: 14px; color: #999; margin-bottom: 20px;">Pevná linka: <a href="tel:+421366334514" style="color: #ff6b00; font-weight: 600;">036 633 45 14</a></p>
+      <p><strong>Adresa</strong><br>Družstevná 126, 935 31 Horná Seč</p>
+      <div class="hours">
+        <p><span>Pondelok</span> <span>Zatvorené</span></p>
+        <p><span>Utorok – Nedeľa</span> <span><strong>14:00 – 22:00</strong></span></p>
+      </div>
+      <a href="https://facebook.com/pizzarock" target="_blank" rel="noopener" class="fb-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+        Pizza Rock na Facebooku
+      </a>
+    </div>
+    <div>
+      <h2>Donáška zdarma</h2>
+      <p>Levice, Kalná nad Hronom, Starý Tekov, Vyšný nad Hronom, Dolná Seč — <strong>dovoz zdarma</strong>.</p>
+      <p style="margin-top: 20px;">Iné lokality? <a href="tel:+421944748111" style="color: #ff6b00; font-weight: 700;">Zavolajte na 0944 748 111</a>, dohodneme sa.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; <span id="rok">2026</span> Pizza Rock · Družstevná 126, Horná Seč</p>
+    <p><a href="tel:+421944748111">📞 0944 748 111</a></p>
+  </div>
+</footer>
+
+<a href="tel:+421944748111" class="call-fab">📞 0944 748 111</a>
+
+<script>
+const pizzas = [
+  { name: "1. Margherita", price: "6,90 €", gram: "500 g", ing: "základ, syr, bazalka" },
+  { name: "2. Šampiňónová", price: "7,90 €", gram: "550 g", ing: "základ, syr, šampiňóny" },
+  { name: "3. Šunková", price: "7,90 €", gram: "550 g", ing: "základ, syr, šunka" },
+  { name: "4. Vegetariánska", price: "7,90 €", gram: "650 g", ing: "základ, syr, šampiňóny, kukurica, olivy, paradajky, paprika" },
+  { name: "5. Pizza Špeciál", price: "7,90 €", gram: "650 g", ing: "základ, syr, saláma, šunka, slanina, šampiňóny, kukurica" },
+  { name: "6. Pizza 5 druhov syra", price: "7,90 €", gram: "650 g", ing: "základ, niva, mozzarela, eidam, údený syr, cammembert" },
+  { name: "7. Pizza Dračí dych", price: "7,90 €", gram: "650 g", ing: "základ, syr, feferóny, jalapeňo, klobása, cibuľa" },
+  { name: "8. Kuracia pizza", price: "7,90 €", gram: "600 g", ing: "základ, syr, kuracie mäso, zelená paprika" },
+  { name: "9. Šunkovo-šampiňónová", price: "7,90 €", gram: "600 g", ing: "základ, syr, šunka, šampiňóny" },
+  { name: "10. Hawajský uragán", price: "7,90 €", gram: "600 g", ing: "základ, syr, šunka, ananás" },
+  { name: "11. Mexická pomsta", price: "7,90 €", gram: "600 g", ing: "základ, syr, feferóny, fazuľa, klobása, kukurica" },
+  { name: "12. Sedliacka pizza", price: "7,90 €", gram: "650 g", ing: "základ, syr, klobása, slanina, zelená paprika, cibuľa" },
+  { name: "13. Pizza z hlbín", price: "7,90 €", gram: "600 g", ing: "základ, syr, krabie tyčinky, dary mora" },
+  { name: "14. Pizza Classic", price: "7,90 €", gram: "600 g", ing: "základ, syr, šunka, kukurica, šampiňóny" },
+  { name: "15. Zachráňte Willyho", price: "7,90 €", gram: "600 g", ing: "základ, syr, tuniak, kukurica" },
+  { name: "16. Grécky dvojboj", price: "7,90 €", gram: "600 g", ing: "základ, syr, čierne olivy, zelené olivy" },
+  { name: "17. Salámová pizza", price: "7,90 €", gram: "550 g", ing: "základ, syr, saláma" },
+  { name: "18. Skok na udicu", price: "7,90 €", gram: "600 g", ing: "základ, syr, tuniak, sardinky" },
+  { name: "19. Pizza Rockerov", price: "9,90 €", gram: "750 g", ing: "základ, syr, saláma, slanina, klobása, šunka, feferóny, vajce" }
+];
+
+const drinks = [
+  { name: "Pivo — alko plech", price: "2,00 €", gram: "0,5 l", ing: "chladené plechovkové pivo" },
+  { name: "Pivo — nealko plech", price: "1,80 €", gram: "0,5 l", ing: "chladené nealko pivo" },
+  { name: "Nealko nápoje", price: "podľa ponuky", gram: "", ing: "kofola, cola, minerálky a ďalšie — aktuálny výber sa spýtajte na telefóne" }
+];
+
+function card(p) {
+  return `
+  <div class="menu-item">
+    <div class="menu-item-top">
+      <h3>${p.name}</h3>
+      <span class="price">${p.price}</span>
+    </div>
+    ${p.gram ? `<span class="gram">${p.gram}</span>` : ''}
+    <p class="ing">${p.ing}</p>
+  </div>`;
+}
+
+document.getElementById('menu-grid').innerHTML = pizzas.map(card).join('');
+document.getElementById('drinks-grid').innerHTML = drinks.map(card).join('');
+
+document.getElementById('menu-toggle').addEventListener('click', () => {
+  document.getElementById('nav').classList.toggle('is-open');
+});
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('nav').classList.remove('is-open');
+  });
+});
+document.getElementById('rok').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
